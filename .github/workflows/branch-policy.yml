@@ -1,0 +1,27 @@
+name: Branch policy
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, reopened, synchronize, edited]
+
+permissions:
+  contents: read
+
+jobs:
+  branch-policy:
+    name: branch-policy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check origin branch
+        env:
+          HEAD: ${{ github.head_ref }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          THIS_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          if [ "$HEAD" != "develop" ] || [ "$HEAD_REPO" != "$THIS_REPO" ]; then
+            echo "::error::You can only merge develop to main ('$HEAD_REPO:$HEAD')."
+            exit 1
+          fi
+          echo "OK: develop -> main"
