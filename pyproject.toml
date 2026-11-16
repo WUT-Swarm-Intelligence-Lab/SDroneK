@@ -1,0 +1,19 @@
+[project]
+name = "SDroneK"
+version = "0.1.0"
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "pyright", "sphinx", "sphinx-rtd-theme"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+exclude = ["docs"]
+
+[tool.pyright]
+include = ["src"]
+exclude = ["**/__pycache__"]
+typeCheckingMode = "standard"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
