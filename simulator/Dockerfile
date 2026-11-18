@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     lsb-release \
     curl \
     gnupg \
+    xvfb \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg \
@@ -29,3 +30,8 @@ RUN git clone https://github.com/gtfactslab/CrazySim.git --recursive \
     && cd CrazySim/crazyflie-firmware/sitl_make/build \
     && cmake .. \
     && make all
+
+COPY start.sh /simulator/start.sh
+RUN chmod +x /simulator/start.sh
+
+CMD ["/simulator/start.sh"]
