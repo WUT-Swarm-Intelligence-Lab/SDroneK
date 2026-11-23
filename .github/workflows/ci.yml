@@ -47,7 +47,7 @@ jobs:
       - name: Install Dev Dependencies
         run: pip install -e ".[dev]"
 
-      - name: Run Ruff
+      - name: Run Ruff Format
         run: ruff format . --check
 
   analyze:
@@ -65,6 +65,9 @@ jobs:
 
       - name: Run Pyright
         run: pyright
+
+      - name: Run Ruff Check
+        run: ruff check .
 
   docs:
     name: Generate Docs
