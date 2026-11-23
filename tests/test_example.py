@@ -1,5 +1,3 @@
-import pytest
-
-
 def test_example_test():
-    assert 1 == 1
+    test_value = 1
+    assert test_value == 1
