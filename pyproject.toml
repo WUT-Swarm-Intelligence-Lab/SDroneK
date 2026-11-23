@@ -8,7 +8,7 @@ dev = ["pytest", "ruff", "pyright", "sphinx", "sphinx-rtd-theme"]
 
 [tool.ruff]
 line-length = 88
-exclude = ["docs"]
+extend-exclude = ["docs"]
 
 [tool.pyright]
 include = ["src"]
