@@ -3,6 +3,8 @@ services:
     build:
       context: ./simulator
     container_name: crazysim
+    ports:
+      - "19850:19850/udp"
     environment:
       - DISPLAY=${DISPLAY}
     volumes:
