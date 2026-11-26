@@ -36,8 +36,12 @@ docker compose run --rm crazysim /simulator/start.sh --headless
 
 ## Using custom worlds
 
-The simulator allows you to provide custom worlds. In order to use them, you must place your world files inside `SDroneK/simulator/custom_worlds/`. Then you can use the `--world` argument as below:
+The simulator allows you to provide custom worlds. In order to use them, you must place your world files inside `SDroneK/simulator/custom_worlds/`. These must not be in any subdirectories.
+
+Then you can use the `--world` argument as below:
 
 ```bash
-docker compose run --rm crazysim /simulator/start.sh --world /custom_worlds/your_world.sdf
+docker compose run --rm crazysim /simulator/start.sh --world your_world
 ```
+
+Notice that the world is not a path but a name. Due to how `CrazySim` handles passing worlds this must be only the name part of the filename, without the extension (`your_world.sdf` will not work). It also cannot contain any subdirectories (you cannot pass `subdir/your_world`).
