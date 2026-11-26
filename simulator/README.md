@@ -1,5 +1,9 @@
 # Simulator Setup
 
+This uses the [CrazySim](https://github.com/gtfactslab/CrazySim) simulator with [Gazebo](https://gazebosim.org/home) as a backend. [The `start.sh` script](./start.sh) uses the CrazySim instructions to set up the container. 
+
+## Prerequisites
+
 This guide assumes you are using [Docker Engine](https://docs.docker.com/engine/) instead of Docker Desktop. Using Docker Desktop may cause problems.
 
 It also assumes you are entering all commands from the root of the repository.
