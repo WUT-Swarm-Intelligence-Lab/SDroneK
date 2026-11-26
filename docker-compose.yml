@@ -1,0 +1,12 @@
+services:
+  crazysim:
+    build:
+      context: ./simulator
+    container_name: crazysim
+    ports:
+      - "19850:19850/udp"
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./simulator/custom_worlds:/custom_worlds
