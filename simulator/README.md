@@ -12,7 +12,7 @@ systemctl status docker
 
 ## Launching in GUI Mode
 
-In order to launch your window system must allow docker:
+GUI Mode launches the simulator in a window on your own PC. In order to launch the simulator in this mode, your window system must allow docker:
 
 ```bash
 xhost +local:docker
@@ -28,7 +28,7 @@ A window with the `Gazebo` simulator should appear on your screen.
 
 ## Launching in Headless Mode
 
-In order to launch the simulator in headless mode you must provide the `--headless` argument as below:
+Headless Mode launches the simulator in the background. It's meant to be used in automated testing. In order to launch the simulator in headless mode you must provide the `--headless` argument as below:
 
 ```bash
 docker compose run --rm crazysim /simulator/start.sh --headless
