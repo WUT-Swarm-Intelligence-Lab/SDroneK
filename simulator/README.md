@@ -8,10 +8,16 @@ This guide assumes you are using [Docker Engine](https://docs.docker.com/engine/
 
 It also assumes you are entering all commands from the root of the repository.
 
-Before continuing ensure the docker deamon is running:
+Before continuing ensure the docker daemon is running:
 
 ```bash
 systemctl status docker
+```
+
+Then you must build the image:
+
+```bash
+docker compose build
 ```
 
 ## Launching in GUI Mode
